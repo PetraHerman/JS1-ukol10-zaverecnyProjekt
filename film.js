@@ -151,7 +151,7 @@ const hodnoceni = (e) => {
 		hvezda.classList.add("far");
 	  }
 	});
-  };
+};
 
 hvezdy.forEach((hvezda, index) => {
 	hvezda.addEventListener("click", () => {
@@ -165,5 +165,37 @@ hvezdy.forEach((hvezda, index) => {
 	hvezda.addEventListener("mouseleave", () => {
 		hodnoceni(ohodnoceno);
 	});
-  });
+});
+
+
+// poznámka
+
+const formular = document.querySelector("#note-form");
+const poznamka = document.querySelector("#message-input");
+const checkbox = document.querySelector("#terms-checkbox");
+
+formular.addEventListener("submit", (e) => {
+	e.preventDefault();
+	odeslat();
+});
+
+let odeslat = () => {
+	if (poznamka.value !== "") {
+		if (checkbox.checked) {
+			formular.innerHTML = `<p class="card-text">${poznamka.value}</p>`;
+		  } else {
+			checkbox.classList.add("is-invalid");
+			checkbox.focus();
+		  }
+	} else if (checkbox.checked){
+			poznamka.classList.add("is-invalid");
+			poznamka.focus();
+	} else {
+		poznamka.classList.add("is-invalid");
+		checkbox.classList.add("is-invalid");
+		poznamka.focus();
+	}	
+};
+
+// ovládání přehrávače
 

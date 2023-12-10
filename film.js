@@ -136,5 +136,34 @@ if (dnyOdPremiery < -1 ) {
 }
 
 
-// hvězdičky
+// hodnocení
+
+const hvezdy = document.querySelectorAll(".fa-star");
+let ohodnoceno;
+
+const hodnoceni = (e) => {
+	hvezdy.forEach((hvezda, index) => {
+	  if (index + 1 <= e) {
+		hvezda.classList.remove("far");
+		hvezda.classList.add("fas");
+	  } else {
+		hvezda.classList.remove("fas");
+		hvezda.classList.add("far");
+	  }
+	});
+  };
+
+hvezdy.forEach((hvezda, index) => {
+	hvezda.addEventListener("click", () => {
+	  	ohodnoceno = index + 1;
+	  	hodnoceni(ohodnoceno);
+	});
+	hvezda.addEventListener("mouseenter", () => {
+		const mouseenterohodnoceno = index + 1;
+		hodnoceni(mouseenterohodnoceno);
+	});
+	hvezda.addEventListener("mouseleave", () => {
+		hodnoceni(ohodnoceno);
+	});
+  });
 

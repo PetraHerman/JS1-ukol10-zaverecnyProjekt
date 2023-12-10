@@ -199,3 +199,55 @@ let odeslat = () => {
 
 // ovládání přehrávače
 
+const prehravac = document.querySelector("#prehravac");
+const video = document.querySelector("video");
+const play = document.querySelector(".play");
+const pause = document.querySelector(".pause");
+const casPrehravani = document.querySelector(".current-time")
+
+prehravac.addEventListener("click", () => {
+	if (video.paused) {
+	  video.play();
+	  prehravac.classList.add("playing");
+	} else {
+	  video.pause();
+	  prehravac.classList.remove("playing");
+	}
+	}
+);
+  
+video.addEventListener("pause", () => {
+	prehravac.classList.remove("playing");
+	}
+);
+  
+video.addEventListener("playing", () => {
+	prehravac.classList.add("playing");
+	}
+);
+
+video.addEventListener("timeupdate", () => {
+	const minuty = Math.floor(video.currentTime / 60, 10);
+	const sekundy = Math.floor(video.currentTime % 60, 10);
+	casPrehravani.innerHTML = `${String(minuty).padStart(2, '0')}:${String(sekundy).padStart(2, '0')}`;
+});
+
+document.addEventListener("keydown", (e) => {
+	if (
+	  e.code === 'Space' &&
+	  e.target.tagName !== 'TEXTAREA' &&
+	  e.target.tagName !== 'INPUT' &&
+	  e.target.tagName !== 'BUTTON'
+	) {
+	  prehravac.classList.toggle("playing");
+	  if (video.paused) {
+		video.play();
+		prehravac.classList.add("playing");
+	  } else {
+		video.pause();
+		prehravac.classList.remove("playing");
+	  }
+	}
+});
+
+// CHYBÍ 9) ČÁST EXTRA BONUS - SKRÝVÁNÍ OVLÁDACÍHO PANELU

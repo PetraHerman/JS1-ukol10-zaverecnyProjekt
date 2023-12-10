@@ -104,3 +104,37 @@ const filmy = [
 		premiera: '2022-12-24',
 	},
 ]
+
+const hash = window.location.hash.substring(1);
+const vybranyFilm = filmy.find(film => film.id === hash);
+
+document.querySelector(".card-title").innerHTML = vybranyFilm.nazev;
+document.querySelector(".card-text").innerHTML = vybranyFilm.popis;
+document.querySelector(".img-fluid").src = vybranyFilm.plakat.url;
+
+// premiéra
+
+const datumPremiery = dayjs(vybranyFilm.premiera);
+const formatovaneDatum = datumPremiery.format("DD.MM.YYYY");
+const dnes = dayjs();
+const dnyOdPremiery = datumPremiery.diff(dnes, "days");
+
+console.log = dnyOdPremiery;
+
+if (dnyOdPremiery < -1 ) {
+	document.getElementById("premiera").innerHTML = `Premiéra <strong> ${formatovaneDatum} </strong>, což bylo před ${Math.abs(dnyOdPremiery)} dny.`;
+} else if (dnyOdPremiery === -1 ) {
+	document.getElementById("premiera").innerHTML = `Premiéra <strong> ${formatovaneDatum} </strong>, což bylo včera.`;
+} else if (dnyOdPremiery === 0 ) {
+	document.getElementById("premiera").innerHTML = `Premiéra <strong> ${formatovaneDatum} </strong>, což je dnes.`;
+} else if (dnyOdPremiery === 1 ) {
+	document.getElementById("premiera").innerHTML = `Premiéra <strong> ${formatovaneDatum} </strong>, což bude zítra.`;
+} else if (dnyOdPremiery <= 4 ) {
+	document.getElementById("premiera").innerHTML = `Premiéra <strong> ${formatovaneDatum} </strong>, což bude za ${dnyOdPremiery} dny.`;
+} else  {
+	document.getElementById("premiera").innerHTML = `Premiéra <strong> ${formatovaneDatum} </strong>, což bude za ${dnyOdPremiery} dní.`;
+}
+
+
+// hvězdičky
+

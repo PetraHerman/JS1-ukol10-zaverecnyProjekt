@@ -103,6 +103,19 @@ const filmy = [
 			'Na zámek v podhůří Krkonoš přijíždí jeho nový majitel Štěpán se svojí snoubenkou, krásnou komtesou Blankou, a mladším bratrem Adamem. Cestou kočár nešťastně srazí kolemjdoucí dívku, Adam jí pomůže a ona se do něj zamiluje. Na zámku Adam objeví starou vlašskou knihu, která by měla obsahovat cestu k pokladům. Tajemné značky vlašské knihy však nedokáže vyluštit ani národopisec Jiráček, který v kraji sbírá pověsti a nevychází z údivu nad tím, že zdejší lidé stále věří v Krakonoše. Na zámku se objeví záhadný cizinec a nabídne Štěpánovi, že jej k pokladu za určitých podmínek dovede. Výprava do hor může začít. Naplní se Liduščina láska k Adamovi? Jakou záhadu skrývá starý obraz na zámku Hůrka a co strašlivého se v horách kdysi odehrálo? A kdo je vlastně Krakonoš a jaké je jeho největší tajemství? (csfd.cz, Česká televize)',
 		premiera: '2022-12-24',
 	},
+	{
+		id: 'kill-bill',
+		nazev: 'Kill Bill',
+		plakat: {
+			url: 'https://play-lh.googleusercontent.com/wygStz54S12vANBGBv_rxrh8oHeXIzO4IZvX3p_LYWqvP7iXkOi_NKP1TANFGuAq_CzcCw',
+			sirka: 420,
+			vyska: 592,
+		},
+		ochutnavka: 'První část kultovního filmu Quentina Tarantina.',
+		popis:
+			'Bývalá členka špičkového zabijáckého komanda sa rozhodne navždy skončit s minulostí a vdát se. Její svatební den se však změní v krvavá jatka. Bývalý šéf Bill zaútočí s úmyslem ji zabít… Všichni si myslí, že je mrtvá, mladá žena však šťastnou náhodou vražedný útok prežije, jen upadne do kómatu. Po pěti letech se vrací z temného prahu smrti s jedinou myšlenkou: pomstít se všem, kteří jí ublížili, bez ohledu na to, co je k tomu vedlo. Všeho schopná hrdinka, která si říká “Nevěsta”, musí nejprve zjistit, kdo je proti ní a jestli existuje někdo, kdo by stál na její straně… U upraveného domku v rezidenční čtvrti zvoní mladá žena. Otevírá jí další mladá žena černé pleti. „Černá mamba“ si přišla vyřídit účty s jednou členkou komanda, které kdysi zmasakrovalo na svatbě celou její rodinu a další svatebčany. Ona sama přežila po poslední Billově kulce a čtyři roky pak strávila v kómatu. Nyní se mstí. Vernita Greenová z komanda Zmijích zabijáků, dnes počestná paní Bellová, manželka lékaře a matka čtyřleté dcerky, brzy nato umírá. Pokusila se Černou mambu zbaběle zastřelit, přestože si právě domluvily schůzku, při níž se měly čestně utkat v boji… Černá mamba má seznam celkem pěti lidí, které chce zabít. Mstí se nejen za sebe, ale i za své nenarozené dítě, o které při masakru přišla. Vernita Greenová je její druhou obětí. První – O-Ren Ishii – přišla na řadu o něco dřív… O-Ren Ishii je obávaná a proslulá nájemná vražedkyně. Jako malá dívka byla svědkem toho, jak byli zabiti oba její rodiče. Ve dvaceti letech se s ní stala nemilosrdná mašina na smrt. Mezi jejími hlavními pomocníky jsou advokátka Sofie, původem Francouzka, a zejména teprve sedmnáctiletá, zato mimořádně krutá Gogo. O-Ren Ishii figuruje na prvním místě seznamu smrti, který sepsala Černá mamba. Ještě než se za ní vypraví, musí si obstarat dobrou zbraň… Navštěvuje ostrov Okinawa a na něm jistého muže jménem Hattori Hanza, proslulého výrobce samurajských mečů. Přestože už nové zbraně dávno nevyrábí, pro Černou mambu udělá výjimku. Musí si ale měsíc počkat. Přesně tak dlouho trvá výroba meče „na škodnou“, který se nikdy neunaví. Teprve potom se může Černá mamba vydat do Tokia a vyhledat nebezpečnou ženu, jejíž přezdívka v zabijáckém komandu zněla Korálovec… (TV Prima)',
+		premiera: '2003-10-10',
+	},
 ]
 
 let movieList = document.getElementById("seznam-filmu");
@@ -130,5 +143,7 @@ filmy.forEach(film => {
 	  </div>
 	`;
 	movieList.appendChild(filmElement);
+	
 
 });
+
